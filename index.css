@@ -1,0 +1,633 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+  }
+  
+  html {
+    /* 10px  */
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    font-family: "General Sans";
+  }
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+/* Optional: hide scrollbar buttons and track */
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+  body {
+    scroll-behavior: smooth;
+    font-size: 1.6rem;
+    background-color: black;
+    color: #fff;
+    overflow-x: hidden;
+    mix-blend-mode: difference;
+   
+  }
+  
+ 
+  
+  /* ============ MiniCurSor ================ */
+  .miniCursor {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s ;
+    /* transition:  0.1s ease; */
+  
+    z-index: 9999999999;
+  }
+  
+  #main {
+    mix-blend-mode: difference;
+    overflow: hidden;
+  }
+  
+  .container {
+    max-width: 1400px;
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+
+  
+  /* =================== Hero ============================= */
+  .hero {
+    height: 90vh;
+    position: relative;
+  }
+  
+  .header {
+    position: fixed;
+    width: 100%;
+    /* padding: 0 2.7rem; */
+    top: 0;
+    left: 0;
+    z-index: 1110;
+    /* margin: 0 auto; */
+    /* display: block; */
+  }
+  
+  .nav {
+    font-weight: 300;
+    opacity: 0.6;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* logo */
+  .logo {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  
+  .humBtn,
+  .closeBtn {
+    display: flex;
+    cursor: pointer;
+  }
+  
+  @media screen and (max-width: 1023px) {
+    .navMenu {
+      position: fixed;
+      /* top: 0; */
+  
+      /* 9 */
+      top: -100%;
+      left: 0;
+      background-color: #fff;
+      width: 100%;
+      transition: top 0.4s;
+    }
+    .navMenu .navLink {
+      color: black;
+    }
+    .navMenu .closeBtn i {
+      color: black;
+    }
+  }
+  
+  .navLists {
+      text-align: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+  }
+  
+  /* navLink */
+  
+  .navItem {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 500;
+    position: relative;
+  }
+
+  .navItem::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    background-color: #fff;  
+    transition: all .3s ease-in-out;
+  }
+
+  .navItem:hover::after{
+    width: 96%;
+  }
+  
+  .closeBtn {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+  }
+  
+  .showMenu {
+    top: 0;
+  }
+  
+  .blurHeader::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0, 0%, 0%, 0.3);
+    backdrop-filter: blur(6px);
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  /* =================================================== */
+  
+  .heading #fristH1 {
+    font-weight: 300;
+    opacity: 0.6;
+    margin-top: 10rem;
+    font-size: 8vw;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  
+  .blockText {
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    opacity: 0.6;
+  }
+  
+  .blockText #secondH1 {
+    font-weight: 300;
+    /* opacity: .6; */
+    margin-left: 10vw;
+    font-size: 8vw;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  
+  #titleLocation {
+    font-weight: 400;
+    opacity: 0.7;
+    text-transform: uppercase;
+    text-align: end;
+  }
+  
+  .smallHeading {
+    text-align: end;
+    text-transform: uppercase;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    line-height: 1;
+    font-size: 0.8em;
+    opacity: 0.6;
+  }
+  .smallHeading h5 {
+    font-weight: 500;
+  }
+  
+  .heroFooter {
+    position: absolute;
+    width: 100%;
+    margin-top: 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    bottom: 1rem;
+  }
+  
+  .heroFooter a {
+    color: #fff;
+  }
+  .heroFooter a:hover {
+    opacity: 0.6;
+  }
+  
+  i:hover {
+    opacity: 0.6;
+  }
+  
+  /* ==================== project =============================== */
+  
+  .project {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .project .projectInfo {
+    flex: 1;
+    font-weight: 300;
+    opacity: 0.7;
+  }
+  
+  .projectInfo .proDate {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+  }
+  
+  .proTitle {
+    font-size: 4rem;
+    font-weight: 600;
+    margin: 1.2rem 0 1rem 0;
+  }
+  
+  .project-tech {
+    display: flex;
+  }
+  
+  .project-tech-used {
+    border: 1px solid;
+    margin-right: 2rem;
+    padding: 0.5rem;
+  }
+  
+  .proDesc {
+    font-size: 2rem;
+    margin: 2rem 0 2.8rem;
+  }
+  
+  .btn {
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    /* padding: 0.9rem 1rem; */
+    padding: 0.7rem 1rem;
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: 500;
+    border-radius: 14px;
+    background-color: transparent;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s;
+  }
+  
+  .btn:hover {
+    /* transform: scale(1.2); */
+    opacity: 0.7;
+  }
+  
+  .project .projectImgCon {
+    flex: 1;
+    overflow: hidden;
+  }
+  
+  .projectImg {
+    padding: 1rem 0;
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    transition: all 0.4s;
+
+  }
+  
+  .projectImgCon:hover .projectImg {
+    transform: scale(1.1);
+  }
+  
+  /* ================Travel Project ============= */
+  
+  .projectTravel {
+    margin-top: 5rem;
+    margin-bottom: 6rem;
+  }
+  
+  .projectTravel .projectInfo {
+    text-align: left; /* Set text alignment to left */
+  }
+  
+  .projectTravel .project-tech {
+    display: flex;
+    justify-content: start;
+  }
+  
+  .projectTravel .project-tech-used:last-child {
+    margin: 0;
+  }
+  
+  /* ================ About Section ============= */
+  
+  .aboutCon {
+    display: flex;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+  }
+  
+  .aboutImgCon {
+    margin-right: 2rem;
+  }
+  
+  .aboutImgCon img {
+    /* Apply the initial blur effect */
+    transition: filter 0.4s ease; /* Add a smooth transition on filter property */
+    width: 200px;
+    border-radius: 50%;
+    opacity: 0.9;
+    filter: none;
+  }
+  
+  .aboutImgCon img:hover {
+    filter: blur(4px);
+    cursor: pointer;
+  }
+  .aboutInfo p{
+    margin-top: 1rem;
+    opacity: .6;
+  }
+  
+  .aboutInfo .aboutBtn {
+    margin-top: 2rem;
+  }
+  
+  /* ================ from Section ============= */
+  
+  .formCon {
+    margin-top: 5rem;
+    display: flex;
+  }
+  
+  .formCon a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  /* 1 */
+  .contactWrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 40rem; */
+  }
+  .contactInfo {
+    text-align: center;
+    color: #fff;
+    width: 90%;
+  }
+  
+  .contactInfo .proTitle {
+    margin: 1.2rem 0 3rem 0;
+    opacity: .6;
+  }
+  
+  .contactInfo .socialIcons {
+    margin: 2rem auto 1rem auto;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    color: #fff;
+  }
+  .email {
+    margin-bottom: 0.7rem;
+  }
+  .socialIcons i {
+    color: #fff;
+    font-size: 2em;
+  }
+  
+  .email a,
+  .phn a {
+    color: #fff;
+  }
+  
+  .cvBtn {
+    /* position: absolute; */
+    color: #fff;
+    outline: none;
+    display: block;
+    background-color: transparent;
+    /* left: 0; */
+    /* bottom: 2rem; */
+    margin: 1.7rem auto;
+  }
+  
+  /* 2 */
+  .fromInfo {
+    flex: 2;
+  }
+  
+  .fromInfo input,
+  .fromInfo textarea {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 0;
+    outline: none;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    background-color: #312929;
+    color: white;
+    font-size: 1.8rem;
+    border-radius: 5px;
+  }
+  
+  .fromInfo form input[type="text"] {
+    margin: 0;
+  }
+  
+  .fromInfo .btnSubmit {
+    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #msg {
+    /* border: 1px solid; */
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  .footer {
+    /* border: 1px solid yellow; */
+    margin: 2rem auto 4rem auto;
+    padding: 1rem 0 1rem 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .footer h5 {
+    font-weight: 400;
+  }
+  
+  /* =============== for Gsap ==================== */
+  .bounding {
+    /* width: fit-content; */
+    /* background-color: red; */
+    overflow: hidden;
+  }
+  .boundingElm {
+    transform: translateY(100%);
+  }
+  
+  /* ================Medai Qureis ====================*/
+  
+  @media screen and (max-width: 450px) {
+    .miniCursor {
+      display: none;
+    }
+    .hero {
+      height: 60vh;
+    }
+
+    .aboutInfo{
+      margin-top: 1rem;
+    }
+    .heading h1 {
+      font-size: 6vh;
+    }
+  
+    .heroFooter {
+      font-size: 1.3rem;
+    }
+    .project {
+      flex-direction: column;
+    }
+  
+    .projectInfo {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  
+    .projectTravel .projectInfo {
+      text-align: center;
+    }
+  
+    .proDesc {
+      font-size: 1.5rem;
+    }
+  
+    .project-tech {
+      text-align: center;
+      justify-content: center;
+    }
+  
+    .project-tech-used {
+      font-size: 1.2rem;
+    }
+  
+    .projectTravel .projectImgCon {
+      order: 1;
+    }
+    .projectImgCon:hover .projectImg {
+      transform: scale(1);
+    }
+  
+    .projectTravel .project-tech {
+      justify-content: center;
+    }
+  
+    .btn {
+      font-size: 1rem;
+    }
+  
+    .aboutCon {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .aboutInfo {
+      text-align: center;
+    }
+    .aboutInfo .aboutHeading{
+      margin: 1rem auto;
+    }
+  
+    .formCon {
+      flex-direction: column;
+    }
+  
+    .fromInfo {
+      flex: 1;
+    }
+  
+    .contactInfo {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  
+    .socialIcons {
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+      width: 100%;
+    }
+  
+    .cvBtn {
+      margin: 1.7rem auto;
+    }
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 900px) {
+    .hero {
+      height: 50vh;
+    }
+  }
+  
+ 
+@media screen and (min-width:1023px) {
+    .closeBtn, .humBtn{
+        display: none;
+    }
+    .header .container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .navLists{
+        flex-direction: row;
+        column-gap: 3rem;
+    }
+}
+
